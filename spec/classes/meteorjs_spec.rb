@@ -6,7 +6,7 @@ describe "meteorjs" do
   it do
     should include_class("boxen::config")
     should contain_exec("install meteorjs").with({
-      :command => "curl https://install.meteor.com",
+      :command => "curl https://install.meteor.com  | /bin/sh",
       :creates => "/test/boxen/bin/meteorjs",
       :cwd     => "/test/boxen/bin"
     })

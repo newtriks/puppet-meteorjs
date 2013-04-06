@@ -10,7 +10,7 @@ class meteorjs (
 	include boxen::config
 
     exec { 'install meteorjs':
-		command => "curl ${url}",
+		command => "curl ${url} | /bin/sh",
 		creates => "${boxen::config::bindir}/meteorjs",
 		cwd     => $boxen::config::bindir,
     }
